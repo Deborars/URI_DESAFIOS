@@ -1,16 +1,7 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
+  //Não passou no teste do URI, porém funciona no console.log
 
-<script>
+
   let a = 12.7;
   let b = 10.4;
   let c = 15.2;
@@ -18,7 +9,7 @@
 
 const formas ={
    triangulo: a*c/2,
-   circulo: pi*(c*c),
+   circulo: pi*Math.pow(c,2),
    trapezio: (a+b)*c/2,
    quadrado: b*b,
    retangulo: a*b
@@ -30,6 +21,3 @@ console.log(`TRAPEZIO: ${(formas.trapezio).toFixed(3)}`);
 console.log(`QUADRADO: ${(formas.quadrado).toFixed(3)}`);
 console.log(`RETANGULO: ${(formas.retangulo).toFixed(3)}`);
 
-</script>
-</body>
-</html>
