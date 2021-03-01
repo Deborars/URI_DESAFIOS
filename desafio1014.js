@@ -26,3 +26,9 @@ Exemplo de Entrada	Exemplo de Saída
 464.6
 
 9.802 km/l*/
+
+let x = parseInt(lines[0]);
+let y = parseFloat(lines[1]);
+let consumo = (x/y).toFixed(3);
+
+console.log(`${consumo} km/l`)
