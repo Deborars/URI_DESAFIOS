@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>oi</li>
+  </ul>
+
+  <script>
+    const frutas = ["maça", "caju", "morango"];
+    const carros = ["Ford", "Fiat", "Chevrolet"];
+
+    const listaFrutas = frutas.forEach.call(carros,(item)=>{
+      console.log(item);
+  })
+
+  function Dom(seletor){
+    this.element = document.querySelector(seletor);
+
+  }
+
+  const a = new Dom("ul");
+  const b = new Dom('li')
+
+  console.log(a);
+  </script>
+</body>
+</html>
