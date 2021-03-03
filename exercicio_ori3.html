@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section>
+  <p>Lobo-cinzento (nome científico:Canis lupus) é uma espécie de mamífero canídeo do gênero Canis. É um sobrevivente da Era do Gelo, originário do Pleistoceno Superior, cerca de 300 mil anos atrás. É o maior membro remanescente selvagem da família canidae.</p>
+  <p>Os lobos-cinzentos são tipicamente predadores ápice nos ecossistemas que ocupam. Embora não sejam tão adaptáveis à presença humana como geralmente ocorre com as demais.</p>
+  <p>O peso e tamanho dos lobos variam muito em todo o mundo, tendendo a aumentar proporcionalmente com a latitude.</p>
+  <p>Os lobos são capazes de percorrer longas distâncias com uma velocidade média de 10 quilômetros por hora e são conhecidos por.</p>
+  </section>
+
+  <script>
+    // Retorne a soma total de caracteres dos
+    // parágrafos acima utilizando reduce
+    const paragrafo = document.querySelectorAll("p");
+
+    
+    const totalCaracteres= Array.prototype.reduce.call(paragrafo, (acc,item) => {
+      return acc + item.innerText.length;
+    },0)
+    
+  console.log(totalCaracteres);
+
+
+
+// Crie uma função que retorne novos elementos
+// html, com os seguintes parâmetros
+// tag, classe e conteudo.
+
+function novoElemento(tag, classe, conteudo){
+  const elemento = document.createElement(tag);
+  classe? elemento.classList.add(classe):null;
+  conteudo? elemento.innerText = conteudo: null;
+  return elemento;
+}
+
+console.log(novoElemento("ul", "ativo", "esse é um texto"));
+
+// Crie uma nova função utilizando a anterior como base
+// essa nova função deverá sempre criar h1 com a
+// classe titulo. Porém o parâmetro conteudo continuará dinâmico
+
+
+function novoTitulo(classe, tag, conteudo){
+  const elemento = document.createElement(tag);
+  elemento.classList.add(classe);
+  conteudo? elemento.innerText = conteudo: null;
+  return elemento;
+}
+
+const h1comclasse = novoTitulo.bind(null,("ativo"));
+
+console.log(h1comclasse("p", "oi de novo"));
+
+
+  </script>
+    
+</body>
+</html>
