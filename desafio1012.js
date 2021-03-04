@@ -1,16 +1,20 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split(' ');
 
-  //Não passou no teste do URI, porém funciona no console.log
-
-
-  let a = 12.7;
-  let b = 10.4;
-  let c = 15.2;
+/**
+ * Escreva a sua solução aqui
+ * Code your solution here
+ * Escriba su solución aquí
+ */
+  let a = parseFloat(lines[0]);
+  let b = parseFloat(lines[1]);
+  let c = parseFloat(lines[2]);
   let pi = 3.14159;
 
 const formas ={
    triangulo: a*c/2,
    circulo: pi*Math.pow(c,2),
-   trapezio: (a+b)*c/2,
+   trapezio: ((a+b)/2)*c,
    quadrado: b*b,
    retangulo: a*b
 };
