@@ -1,20 +1,14 @@
-
-  //Não passou no teste do URI, porém funciona no console.log
-
-
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.split('\n');
+var lines = input.split(' ');
 
-/**
- * Escreva a sua solução aqui
- * Code your solution here
- * Escriba su solución aquí
- */
- 
- let num = lines.reduce((acc, item)=>{
-    if(acc>item) {acc;}
-    else {acc = item;}
-    return acc 
- },0)
+
+let a = parseInt(lines[0]);
+let b = parseInt(lines[1]);
+let c = parseInt(lines[2]);
+
+let maiorAB = (a + b + Math.abs(a-b))/2;  
+
+
+let num = Math.max(maiorAB, c);
 
 console.log(`${num} eh o maior`);
