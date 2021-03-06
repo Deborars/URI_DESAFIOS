@@ -32,3 +32,4 @@ let y = parseFloat(lines[1]);
 let consumo = (x/y).toFixed(3);
 
 console.log(`${consumo} km/l`)
+
