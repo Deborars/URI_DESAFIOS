@@ -22,6 +22,50 @@
     })
 
 console.log(moto);
+
+
+// Crie uma função que verifique
+// corretamente o tipo de dado
+
+function type(value){
+  return Object.prototype.toString.call(value).slice(7).replace("]", "");
+}
+
+
+
+// Crie um objeto quadrado com
+// a propriedade lados e torne
+// ela imutável
+
+const quadrado ={};
+Object.defineProperties(quadrado,{
+  rodas:{
+    value:2,
+    configurable:false,
+    }
+})
+
+
+
+// Previna qualquer mudança
+// no objeto abaixo
+const configuracao = {
+  width: 800,
+  height: 600,
+  background: '#333'
+}
+
+console.log(Object.freeze(configuracao));
+
+// Liste o nome de todas
+// as propriedades do
+// protótipo de String e Array
+
+const stringinfo = Object.getOwnPropertyNames(String.prototype);
+const arrInfo = Object.getOwnPropertyNames(Array.prototype)
+console.log(stringinfo);
+console.log(arrInfo);
+
   </script>
 </body>
 </html>
