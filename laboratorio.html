@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      box-sizing: border-box;
+    }
+    .container{
+      width: 200px;
+      height: 150px;
+      margin: 200px 0 200px 100px;
+      overflow: scroll;
+      float: left;
+    }
+    .size{
+      width: 190px;
+      height: 100px;
+    }
+    .green{background-color: green;}
+    .red{background-color: red;}
+    .yellow{background-color: yellow;}
+    .purple{background-color: purple;}
+
+    .info{
+    margin: 200px 0 0 100px;
+    float: left;
+    }
+    .text h2{
+      
+      margin-top: 0;
+    }
+
+    .text{
+      display: none;
+    }
+    .text.ativo{
+      display: block;
+      animation: animacao .6s forwards;
+    }
+
+    @keyframes animacao {
+      from{opacity: 0; transform: translate3d(-30px,0,0);}
+      to{opacity: 1; transform: translate3d(0,0,0);}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="size green"></div>
+    <div class="size red"></div>
+    <div class="size yellow"></div>
+    <div class="size purple"></div>
+  </div>
+  <div class="info">
+    <div class="text ativo">
+      <h2>Texto 1</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime consequatur fuga rerum officiis sequi quam corrupti quaerat amet ex eius.</p>
+    </div>
+    <div class="text">
+      <h2>Texto 2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime consequatur fuga rerum officiis sequi quam corrupti quaerat amet ex eius.</p>
+    </div>
+    <div class="text">
+      <h2>Texto 3</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime consequatur fuga rerum officiis sequi quam corrupti quaerat amet ex eius.</p>
+    </div>
+    <div class="text">
+      <h2>Texto 4</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime consequatur fuga rerum officiis sequi quam corrupti quaerat amet ex eius.</p>
+    </div>
+  </div>
+  <script>
+    const tabmenu = document.querySelectorAll(".container .size");
+    const tabcontent = document.querySelectorAll(".info .text");
+
+    function ativaConteudo(index){
+      tabcontent.forEach(item=>{
+        item.classList.remove("ativo");
+      })
+      tabcontent[index].classList.add("ativo");
+    }
+
+    tabmenu.forEach((item,index)=>{
+      item.addEventListener("click", function(){
+        ativaConteudo(index);
+      })
+      
+    })
+  </script>
+</body>
+</html>
