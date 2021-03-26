@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      const promessa = new Promise(function(resolve,reject){
+      const condicao = false;
+      if(condicao){resolve('true');}
+      else{reject('false');}                
+  })
+
+    promessa.then((resolva)=>{
+      console.log(resolva)
+    })
+    .catch((reject)=> console.log("catch"))
+
+    const login = new Promise((resolve)=>{
+      setTimeout(function(){
+        resolve("Login Efetuado");
+    }, 1000)
+    })
+
+    const dados = new Promise((resolve)=>{
+      setTimeout(()=>{
+        resolve("Dados cadastrados");
+    }
+    ,1500)
+    })
+
+    const carregou = Promise.all([login, dados]);
+
+    carregou.then((resolve)=>{
+      console.log(resolve);
+    })
+
+  fetch('./arquivo.txt').then(function(resolve){
+    return resolve.text();
+  }).then((corpo)=>{
+      console.log(corpo);
+  })
+
+  let doc = fetch('./arquivo.txt');
+
+  doc 
+  .then(r => r.text())
+  .then((body)=>{
+    document.documentElement.innerText = body;
+  })
+
+const cep = fetch('https://viacep.com.br/ws/01001000/json/')
+
+cep.then((r)=>r.json())
+.then((body)=>{
+  console.log(body.cep);
+})
+
+const styleElement = document.createElement("style");
+
+fetch('./style.css')
+.then((response)=> response.text())
+.then(style =>{
+  styleElement.innerText = style;
+  document.body.appendChild(styleElement);
+})
+
+  </script>
+</body>
+</html>

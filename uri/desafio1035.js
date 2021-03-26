@@ -14,8 +14,10 @@ let D = parseInt(lines[3]);
 let X = C + D;
 let Y = A + B;
 
-if(B>C && D>A && X>Y && A%2===0 && C>0 && D>0)
-    {console.log("Valores aceitos");}
-else{
-    console.log("Valores nao aceitos");
+if(B>C && D>A && X>Y && C>0 && D>0 && A%2===0 ){
+  console.log("Valores aceitos");
 }
+else{
+  console.log("Valores nao aceitos");
+}
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: #C239B3;
+    }
+    .container{
+      background-color: #C239B3;
+      width: 630px;
+      margin-top: 200px;
+      margin-left: 50%;
+      transform: translate(-50%);
+    }
+    div{
+      width: 200px;
+      height: 200px;
+      background-color: #9A0089;
+      display: inline-block;
+      margin-left: 5px;
+    }
+    div:nth-child(1):hover{
+      animation: move .6s forwards;
+    }
+    @keyframes move{
+      from{
+        opacity: 0;
+        background-color: #FFB900;
+      }
+      to{
+        opacity: 1;
+        background-color: #4C4A48;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <script>
+    const promessa = new Promise(function(resolve, reject){
+      let condicao = true;
+      if(condicao){
+        resolve("é verdadeiro");
+      }
+      else{
+        reject("é falso");
+      }
+    });
+    console.log(promessa);
+  </script>
+</body>
+</html>
