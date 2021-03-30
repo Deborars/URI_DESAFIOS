@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+
+    CEP: <input type="number" name="cep" id="cep">
+    <input type="submit" value="Buscar">
+
+    <p id="saida">O endereço buscado sairá aqui:</p>
+  </form>
+
+  <div class="btc"></div>
+
+  <script>
+    // Utilizando a API https://viacep.com.br/ws/${CEP}/json/
+// crie um formulário onde o usuário pode digitar o cep
+// e o endereço completo é retornado ao clicar em buscar
+  const inputCep = document.querySelector("#cep");
+  const button = document.querySelector('[type="submit"]');
+  const output = document.querySelector("#saida");
+
+
+  button.addEventListener("click", handleClick);
+
+  function handleClick(event){
+    event.preventDefault();
+    searchZip(inputCep);
+  }
+
+  function searchZip(cep){
+  fetch(`https://viacep.com.br/ws/${cep.value}/json/`)
+  .then((resolve)=>resolve.text())
+  .then((text)=> output.innerHTML = text)
+  }
+
+// Utilizando a API https://blockchain.info/ticker
+// retorne no DOM o valor de compra da bitcoin and reais.
+// atualize este valor a cada 30s
+
+const displayBtc= document.querySelector(".btc");
+
+function bitcoinbr(){
+fetch('https://blockchain.info/ticker')
+.then(resolve=>resolve.json())
+.then((brBTC)=> displayBtc.innerHTML = ((`R$ ${(brBTC.BRL.buy)}`.replace(".", ","))));
+}
+
+//setInterval(bitcoinbr, 1000);
+
+bitcoinbr()
+
+// Utilizando a API https://api.chucknorris.io/jokes/random
+// retorne uma piada randomica do chucknorris, toda vez que
+// clicar em próxima
+
+
+  </script>
+</body>
+</html>
