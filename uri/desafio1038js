@@ -1,0 +1,32 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+/**
+ * Escreva a sua solução aqui
+ * Code your solution here
+ * Escriba su solución aquí
+ */
+beecrowd | 1038
+Lanche
+const tabela = [
+  { codigo: 1, nome: 'Cachorro Quente', preco: 4 },
+  { codigo: 2, nome: 'X-Salada', preco: 4.50 },
+  { codigo: 3, nome: 'X-Bacon', preco: 5 },
+  { codigo: 4, nome: 'Torrada simples', preco: 2 },
+  { codigo: 5, nome: 'Refrigerante', preco: 1.50 }
+];
+
+let total = 0;
+let [item, quantidade] = lines[0].split(' ');
+
+function caixa(item, quantidade) {
+  tabela.forEach((produto) => {
+    if (item === produto.codigo) {
+      total = (produto.preco * quantidade);
+    }
+  });
+}
+
+caixa(Number(item), Number(item));
+
+console.log(`Total: R$ ${total.toFixed(2)}`);
