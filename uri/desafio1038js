@@ -17,7 +17,7 @@ const tabela = [
 ];
 
 let total = 0;
-let [item, quantidade] = lines[0].split(' ');
+let [item,] = lines[0].split(' ');
 
 function caixa(item, quantidade) {
   tabela.forEach((produto) => {
@@ -27,6 +27,6 @@ function caixa(item, quantidade) {
   });
 }
 
-caixa(Number(item), Number(item));
+caixa(Number(item), Number(quantidade));
 
 console.log(`Total: R$ ${total.toFixed(2)}`);
